@@ -25,7 +25,7 @@ resource "aws_instance" "this" {
     {
       ServerName = var.ServerName
     })
-  iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
+  iam_instance_profile = "arn:aws:iam::839180414951:instance-profile/EC2RoleToAccessS3Buckets"
   key_name = "ec2-tutorial"
   tags = merge(var.tags)
 }
