@@ -29,3 +29,9 @@ variable "availability_zone" {
   type        = string
   default     = null
 }
+
+variable "ServerName" {
+  description = "ServerName"
+  type        = string
+  default     = null
+}

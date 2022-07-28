@@ -13,3 +13,5 @@ tags = {
   Owner    = "bruno.runner"
 
 }
+
+ServerName = "servertest"

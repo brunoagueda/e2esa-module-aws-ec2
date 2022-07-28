@@ -21,7 +21,10 @@ resource "aws_instance" "this" {
   #   lifecycle {
   #     ignore_changes = [ami]
   #   }
-  user_data = templatefile("user_data/install_script.tpl")
+  user_data = templatefile("user_data/install_script.tpl",
+    {
+      ServerName = var.ServerName
+    })
   tags = merge(var.tags)
 }
 
