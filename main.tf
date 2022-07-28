@@ -26,7 +26,7 @@ resource "aws_instance" "this" {
       ServerName = var.ServerName
     })
   iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
-  key_name = "mytestpubkey"
+  key_name = "ec2-tutorial"
   tags = merge(var.tags)
 }
 
