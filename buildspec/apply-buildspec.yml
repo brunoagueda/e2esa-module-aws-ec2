@@ -2,9 +2,17 @@ version: 0.2
 phases:
   pre_build:
     commands:
+      - sudo yum install -y yum-utils
+      - sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+      - sudo yum -y install terraform
+      - cd $CODEBUILD_SRC_DIR
       - terraform init
       - terraform validate
   
   build:
     commands:
       - terraform apply -var-file="dev-app.tfvars" --auto-approve
+
+  post_build:
+    commands:
+     - aws lambda update-function-configuration --function-name PSTest --environment "Variables={runnerUser=var.runnerUser,runnerDevice=var.runnerDevice}"
