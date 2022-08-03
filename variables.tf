@@ -35,3 +35,18 @@ variable "ServerName" {
   type        = string
   default     = null
 }
+
+# -------------------------------------------
+# A360
+# -------------------------------------------
+variable "runner_User" {
+  description = "Runner user"
+  type        = string
+  default     = null
+}
+
+variable "runner_Device" {
+  description = "Runner device"
+  type        = string
+  default     = aws_instance.this.private_dns
+}

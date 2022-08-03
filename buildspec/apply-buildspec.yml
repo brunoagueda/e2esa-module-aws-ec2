@@ -1,4 +1,10 @@
 version: 0.2
+
+env:
+    parameter-store:
+      RUNNERUSER: AA_runner_user
+      RUNNERDEVICE: AA_runner_device
+
 phases:
   pre_build:
     commands:
@@ -15,4 +21,4 @@ phases:
 
   post_build:
     commands:
-     - aws lambda update-function-configuration --function-name PSTest --environment "Variables={runnerUser=var.runnerUser,runnerDevice=var.runnerDevice}"
+     - aws lambda update-function-configuration --function-name RegisterDeviceA360 --environment "Variables={runnerUser=${RUNNERUSER},runnerDevice=${RUNNERDEVICE}}"
