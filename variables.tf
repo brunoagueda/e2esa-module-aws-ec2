@@ -42,7 +42,7 @@ variable "ServerName" {
 variable "runner_User" {
   description = "Runner user"
   type        = string
-  default     = null
+  default     = "teste erro etranho"
 }
 
 #variable "runner_Device" {
