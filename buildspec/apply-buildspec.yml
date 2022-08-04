@@ -19,7 +19,7 @@ phases:
     commands:
       - terraform apply -var-file="dev-app.tfvars" --auto-approve
 
-  post_build:
-    commands:
-     - RUNNERDEVICE = terraform output private_dns
-     - aws lambda update-function-configuration --function-name RegisterDeviceA360 --environment "Variables={runnerUser=${RUNNERUSER},runnerDevice=${RUNNERDEVICE}}"
+  #post_build:
+  #  commands:
+  #   #- RUNNERDEVICE = terraform output private_dns
+  #   - aws lambda update-function-configuration --function-name RegisterDeviceA360 --environment "Variables={runnerUser=${RUNNERUSER},runnerDevice=${RUNNERDEVICE}}"
