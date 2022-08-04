@@ -26,18 +26,18 @@ resource "aws_instance" "this" {
 #  instance_id = aws_instance.this.id
 #}
 
-resource "aws_ssm_parameter" "device" {
-  name        = "AA_runner_device"
-  description = "The runner device"
-  type        = "String"
-  value       = var.runner_Device
-  overwrite   = true
-}
+#resource "aws_ssm_parameter" "device" {
+#  name        = "AA_runner_device"
+#  description = "The runner device"
+#  type        = "String"
+#  value       = var.runner_Device
+#  overwrite   = true
+#}
 
-resource "aws_ssm_parameter" "user" {
-  name        = "AA_runner_user"
-  description = "The runner user"
-  type        = "String"
-  value       = var.runner_User
-  overwrite   = true
-}
+#resource "aws_ssm_parameter" "user" {
+#  name        = "AA_runner_user"
+#  description = "The runner user"
+#  type        = "String"
+#  value       = var.runner_User
+#  overwrite   = true
+#}

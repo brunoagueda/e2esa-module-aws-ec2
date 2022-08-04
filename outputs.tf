@@ -1,5 +1,5 @@
 output "private_dns" {
-  value       = var.runner_Device
+  value       = aws_instance.this.private_dns
   description = "Instance hostname to be passed to Lambda function"
 }
 
