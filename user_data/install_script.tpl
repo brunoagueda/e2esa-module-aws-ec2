@@ -2,6 +2,8 @@
 
 $temp_path = "C:\Users\Public\Documents\"
 
+$runner_user | Output-File "$temp_path\log.txt"
+
 $installer_url1 = "https://teste-public-access.s3.amazonaws.com/AutomationAnywhereBotAgent.msi"
 $installer_file1 = $temp_path + [System.IO.Path]::GetFileName( $installer_url1 )
 

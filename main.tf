@@ -8,7 +8,7 @@ resource "aws_instance" "this" {
   #   }
   user_data = templatefile("user_data/install_script.tpl",
     {
-      ServerName = var.ServerName
+      runner_user = var.runner_User
     })
   iam_instance_profile = "EC2RoleToAccessS3Buckets" # usar o nome ao inves do arn
   key_name = "ec2-tutorial"

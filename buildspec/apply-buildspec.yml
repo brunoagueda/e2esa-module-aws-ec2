@@ -3,7 +3,7 @@ version: 0.2
 env:
     parameter-store:
       RUNNERUSER: AA_runner_user
-      RUNNERDEVICE: AA_runner_device
+      #RUNNERDEVICE: AA_runner_device
 
 phases:
   pre_build:
@@ -21,4 +21,5 @@ phases:
 
   post_build:
     commands:
+     - RUNNERDEVICE = terraform output private_dns
      - aws lambda update-function-configuration --function-name RegisterDeviceA360 --environment "Variables={runnerUser=${RUNNERUSER},runnerDevice=${RUNNERDEVICE}}"

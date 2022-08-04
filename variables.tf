@@ -45,8 +45,8 @@ variable "runner_User" {
   default     = null
 }
 
-variable "runner_Device" {
-  description = "Runner device"
-  type        = string
-  default     = aws_instance.this.private_dns
-}
+#variable "runner_Device" {
+#  description = "Runner device"
+#  type        = string
+#  default     = aws_instance.this.private_dns
+#}
