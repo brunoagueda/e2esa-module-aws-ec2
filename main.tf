@@ -6,7 +6,7 @@ resource "aws_instance" "this" {
   #   lifecycle {
   #     ignore_changes = [ami]
   #   }
-  user_data = templatefile("user_data/install_script_teste.tpl",
+  user_data = templatefile("user_data/install_script.tpl",
     {
       runner_user = var.runner_User
     })

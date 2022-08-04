@@ -2,7 +2,7 @@
 
 $temp_path = "C:\Users\Public\Documents\"
 
-$logMsg = "hostname da ec2: " + ${runner_user}
+$logMsg = "user da ec2: " + ${$runner_user} + ", hostanme: " + $env:COMPUTERNAME
 
 $logMsg | Out-File $temp_path"log.txt"
 

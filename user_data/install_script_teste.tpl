@@ -6,7 +6,7 @@ $logMsg = "hostname da ec2: "
 
 $logMsg | Out-File $temp_path"log.txt"
 
-$logMsg2 = "hostname da ec2: " + ${runner_user}
+$logMsg2 = "hostname da ec2: " + ${$runner_user}
 
 $logMsg2 | Out-File $temp_path"log2.txt"
 
