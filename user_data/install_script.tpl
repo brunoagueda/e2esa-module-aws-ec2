@@ -52,7 +52,9 @@ Catch
 }
 
 try{
-    aws lambda update-function-configuration --function-name $functionName --environment "Variables={runnerUser='+$runner_User+',runnerDevice='+$env:COMPUTERNAME+'}"
+    $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
+
+    aws lambda update-function-configuration --function-name $functionName --environment "Variables={runnerUser='$runner_User',runnerDevice='$env:COMPUTERNAME'}"
     
     aws lambda invoke --function-name $functionName response.json
 }
