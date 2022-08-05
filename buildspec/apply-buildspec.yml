@@ -1,9 +1,9 @@
 version: 0.2
 
-env:
-    parameter-store:
-      RUNNERUSER: AA_runner_user
-      #RUNNERDEVICE: AA_runner_device
+#env:
+#    parameter-store:
+#      RUNNERUSER: AA_runner_user
+#      RUNNERDEVICE: AA_runner_device
 
 phases:
   pre_build:
