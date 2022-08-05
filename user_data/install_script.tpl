@@ -1,5 +1,7 @@
 ﻿<powershell>
 
+$functionName = "RegisterDeviceA360"
+
 $temp_path = "C:\Users\Public\Documents\"
 
 $runner_user = "${runner_user}"
@@ -50,13 +52,9 @@ Catch
 }
 
 try{
-    $command = 'aws lambda update-function-configuration --function-name PSTest --environment "Variables={runnerUser='+$runnerUser+',runnerDevice='+$env:COMPUTERNAME+'}"'
+    aws lambda update-function-configuration --function-name $functionName --environment "Variables={runnerUser='+$runner_User+',runnerDevice='+$env:COMPUTERNAME+'}"
     
-    $lambda_bat = $temp_path+"lambda.bat"
-
-    $command | Out-File $lambda_bat
-
-    Start-Process "cmd.exe"  "/k $lambda_bat"
+    aws lambda invoke --function-name $functionName response.json
 }
 catch{
 
