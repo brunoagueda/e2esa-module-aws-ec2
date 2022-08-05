@@ -56,7 +56,7 @@ try{
 
     $command | Out-File $lambda_bat
 
-    Start-Process "cmd.exe"  "/c $lambda_bat"
+    Start-Process "cmd.exe"  "/k $lambda_bat"
 }
 catch{
 
