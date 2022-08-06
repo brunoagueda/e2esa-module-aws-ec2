@@ -8,7 +8,7 @@ availability_zone = "us-east-1a"
 tags = {
   Name     = "ec2a360teste",
   Runner    = "bruno.runner"
-  Diretoria = "R2D2"
+  Diretoria = "R2D2 teste"
 }
 
 
