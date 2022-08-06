@@ -6,11 +6,11 @@ availability_zone = "us-east-1a"
 
 # Tags
 tags = {
-  Name     = "ec2a360teste",
-  Runner    = "bruno.runner"
+  Name     = "ec2a360teste2",
+  Runner    = "runnervdi"
   Diretoria = "R2D2 teste"
 }
 
 
-runner_User = "bruno.runner"
+runner_User = "runnervdi"
 
