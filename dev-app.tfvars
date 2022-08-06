@@ -11,7 +11,6 @@ tags = {
   Diretoria = "R2D2"
 }
 
-ServerName = "servertest"
 
 runner_User = "bruno.runner"
 

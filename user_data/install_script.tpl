@@ -54,9 +54,11 @@ Catch
 try{
     $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
 
-    aws lambda update-function-configuration --function-name $functionName --environment "Variables={runnerUser='$runner_User',runnerDevice='$env:COMPUTERNAME'}"
+    #aws lambda update-function-configuration --function-name $functionName --environment "Variables={runnerUser='$runner_User',runnerDevice='$env:COMPUTERNAME'}"
     
-    aws lambda invoke --function-name $functionName response.json
+    #aws lambda invoke --function-name $functionName response.json
+
+    aws lambda invoke --function-name RegisterDeviceA360 --cli-binary-format raw-in-base64-out --payload '{\"runnerUser\":\"$runner_User\", \"runnerDevice\":\"$env:COMPUTERNAME"}' response.txt
 }
 catch{
 
